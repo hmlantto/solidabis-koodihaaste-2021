@@ -54,7 +54,7 @@ const App = () => {
 
       <Row>
         <div className="instructions-div" >
-            <p>Autoilumittarilla voit tarkastella, miten ajonopeuden muutos vaikuttaa matka-aikaan ja bensankulutukseen. Laskuri päivittyy reaaliajassa.</p>
+            <p>Autoilumittarilla voit tarkastella, miten ajonopeuden muutos vaikuttaa matkustusaikaan ja bensankulutukseen. Laskuri päivittyy reaaliajassa.</p>
         </div>
       </Row>
 
