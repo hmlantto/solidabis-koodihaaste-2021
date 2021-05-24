@@ -22,36 +22,40 @@ const Comparison = ( props ) => {
   const fuelDifference = ( Math.abs( totalFuel2 - totalFuel1 ) ).toFixed( 2 )
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Nopeus</th>
-          <th>Matkustusaika</th>
-          <th>Bensankulutus</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td>{speed1} km/h</td>
-          <td>{time1Hours} h {time1Minutes} min</td>
-          <td>{totalFuel1} litraa</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>{speed2} km/h</td>
-          <td>{time2Hours} h {time2Minutes} min</td>
-          <td>{totalFuel2} litraa</td>
-        </tr>
-        <tr className="results-row">
-          <th>Ero</th>
-          <td></td>
-          <td>{diffHours} h {diffMinutes} min</td>
-          <td>{fuelDifference} litraa</td>
-        </tr>         
-      </tbody>
-    </Table>
+    <>
+      <Table>
+        <tbody>
+          <tr>
+            <th>Nopeus</th>
+            <td>{speed1} km/h</td>
+            <td>{speed2} km/h</td>
+          </tr>
+          <tr>
+            <th>Matkustusaika</th>
+            <td>{time1Hours} h {time1Minutes} min</td>
+            <td>{time2Hours} h {time2Minutes} min</td>
+          </tr>
+          <tr>
+            <th>Bensankulutus</th>
+            <td>{totalFuel1} litraa</td>
+            <td>{totalFuel2} litraa</td>
+          </tr>
+        </tbody>
+      </Table>
+
+      <Table>
+        <tbody>
+          <tr className="results-row">
+            <th>Ero matkustusajassa</th>
+            <td>{diffHours} h {diffMinutes} min</td>
+          </tr>
+          <tr className="results-row">
+            <th>Ero bensankulutuksessa</th>
+            <td>{fuelDifference} litraa</td>
+          </tr>
+        </tbody>
+      </Table>
+    </>
   )
 }
 
