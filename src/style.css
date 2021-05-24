@@ -36,6 +36,10 @@ h1 {
   }
 }
 
+.input-div {
+  width: 100%;
+}
+
 .form-label {
   font-weight: bold;
   padding-top: 0.5rem;
