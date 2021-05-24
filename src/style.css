@@ -1,0 +1,73 @@
+/* ----------------------------------------------- */
+/* MAIN LAYOUT                                     */
+/* ----------------------------------------------- */
+
+.main-div {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: 50rem;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
+/* ----------------------------------------------- */
+/* HEADER                                          */
+/* ----------------------------------------------- */
+
+.header-div {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ----------------------------------------------- */
+/* INPUT COL                                       */
+/* ----------------------------------------------- */
+
+@media (max-width: 767px) {
+  .input-div {
+    margin-bottom: 3rem;
+  }
+}
+
+.form-label {
+  font-weight: bold;
+  padding-top: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+/* ----------------------------------------------- */
+/* RESULTS COL                                     */
+/* ----------------------------------------------- */
+
+.results-col {
+  padding-block-end: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.results-div {
+  border: solid;
+  border-width: thin;
+  border-color: grey;
+  border-radius: .25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.choices-div {
+  margin-bottom: 1rem;
+}
+
+.results-row {
+  background-color: #f1f1f1;
+}

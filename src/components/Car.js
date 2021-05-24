@@ -1,8 +1,15 @@
 import React from 'react'
+import Form from 'react-bootstrap/Form'
 
-const Car = ({car, handleClick}) => {
+const Car = ({car, chooseCar}) => {
   return (
-    <button value={car.fuel} onClick={handleClick}>{car.fuel} l/100 km</button>
+    <Form.Check
+                type="radio"
+                name="fuel-consumption"
+                id={`car-${car.id}`}
+                value={car.fuel}
+                onChange={chooseCar}
+                label={`${car.fuel} l/100 km`} />
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import Table from 'react-bootstrap/Table'
 
 const Comparison = ( props ) => {
   const { fuel, distance, speed1, speed2 } = props
@@ -16,55 +17,41 @@ const Comparison = ( props ) => {
   const diffHours      = Math.floor( timeDifference )
   const diffMinutes    = Math.round( ( timeDifference - diffHours ) * 60 )
 
-  const totalFuel1     = speed1 === 0 ? 0 : ( Math.pow(slope, (speed1-1)) * fuel ).toFixed( 2 )
-  const totalFuel2     = speed2 === 0 ? 0 : ( Math.pow(slope, (speed2-1)) * fuel ).toFixed( 2 )
+  const totalFuel1     = speed1 === 0 ? 0 : ( Math.pow(slope, (speed1-1)) * fuel * distance / 100 ).toFixed( 2 )
+  const totalFuel2     = speed2 === 0 ? 0 : ( Math.pow(slope, (speed2-1)) * fuel * distance / 100 ).toFixed( 2 )
   const fuelDifference = ( Math.abs( totalFuel2 - totalFuel1 ) ).toFixed( 2 )
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <th>Auton bensankulutus</th>
-            <td>{fuel} l/100 km</td>
-          </tr>
-          <tr>
-            <th>Etäisyys</th>
-            <td>{distance} km</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Nopeus</th>
-            <th>Matkustusaika</th>
-            <th>Bensankulutus</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td>{speed1} km/h</td>
-            <td>{time1Hours} h {time1Minutes} min</td>
-            <td>{totalFuel1} litraa</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>{speed2} km/h</td>
-            <td>{time2Hours} h {time2Minutes} min</td>
-            <td>{totalFuel2} litraa</td>
-          </tr>
-          <tr>
-            <th>Ero</th>
-            <td></td>
-            <td>{diffHours} h {diffMinutes} min</td>
-            <td>{fuelDifference} litraa</td>
-          </tr>         
-        </tbody>
-      </table>
-    </div>
+    <Table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nopeus</th>
+          <th>Matkustusaika</th>
+          <th>Bensankulutus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>{speed1} km/h</td>
+          <td>{time1Hours} h {time1Minutes} min</td>
+          <td>{totalFuel1} litraa</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>{speed2} km/h</td>
+          <td>{time2Hours} h {time2Minutes} min</td>
+          <td>{totalFuel2} litraa</td>
+        </tr>
+        <tr className="results-row">
+          <th>Ero</th>
+          <td></td>
+          <td>{diffHours} h {diffMinutes} min</td>
+          <td>{fuelDifference} litraa</td>
+        </tr>         
+      </tbody>
+    </Table>
   )
 }
 
