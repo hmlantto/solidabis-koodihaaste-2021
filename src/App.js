@@ -5,12 +5,15 @@ import Col from 'react-bootstrap/Col'
 import InputForm from './components/InputForm'
 import Choices from './components/Choices'
 import Comparison from './components/Comparison'
+import carsService from './services/cars'
 
-const App = ( { cars } ) => {
+const App = () => {
   const [ fuelConsumption, setFuelConsumption ] = useState( 0 )
   const [ distance, setDistance ] = useState( 0 )
   const [ speed1, setSpeed1 ] = useState( 0 )
   const [ speed2, setSpeed2 ] = useState( 0 )
+
+  const cars = carsService.getAll()
 
   const chooseCar = ( event ) => {
     setFuelConsumption( parseInt( event.target.value ) )
@@ -56,7 +59,7 @@ const App = ( { cars } ) => {
       </Row>
 
       <Row>
-        <Col md className="input-col">
+        <Col md={5} className="input-col">
           <Row>
             <div className="input-div">
               <InputForm  cars={cars}
