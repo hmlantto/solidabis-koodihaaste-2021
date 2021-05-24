@@ -7,42 +7,40 @@ import './../style.css'
 
 const InputForm = (props) => {
   const { cars, chooseCar, inputDistance, inputSpeed1, inputSpeed2 } = props
-  const mdColWidth = 12
-  const xsColWidth = 9
 
   return (
     <Form>
       <fieldset>
         <Form.Group as={Row}>
-          <Form.Label md={mdColWidth}>
+          <Form.Label>
             Bensankulutus nopeudella 1 km/h
           </Form.Label>
-          <Col md={mdColWidth}>
+          <Col>
             {cars.map( car => <Car key={car.id} car={car} chooseCar={chooseCar} /> )}
           </Col>
         </Form.Group>
       </fieldset>
       <Form.Group as={Row} controlId="distance">
-        <Form.Label md={mdColWidth}>
+        <Form.Label>
           Etäisyys (km)
         </Form.Label>
-        <Col xs={xsColWidth} md={mdColWidth}>
+        <Col>
           <Form.Control as="input" type="number" placeholder="Syötä etäisyys" min="0" onChange={inputDistance} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} controlId="speed1">
-        <Form.Label md={mdColWidth}>
+        <Form.Label>
           Nopeus 1 (km/h)
         </Form.Label>
-        <Col xs={xsColWidth} md={mdColWidth}>
+        <Col>
           <Form.Control as="input" type="number" placeholder="Syötä verrattava ajonopeus" min="0" max="200" step="5" onChange={inputSpeed1} />
         </Col>
       </Form.Group>
       <Form.Group as={Row} controlId="speed2">
-        <Form.Label md={mdColWidth}>
+        <Form.Label>
           Nopeus 2 (km/h)
         </Form.Label>
-        <Col xs={xsColWidth} md={mdColWidth}>
+        <Col>
           <Form.Control as="input" type="number" placeholder="Syötä verrattava ajonopeus" min="0" max="200" step="5" onChange={inputSpeed2} />
         </Col>
       </Form.Group>
