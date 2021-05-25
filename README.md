@@ -4,10 +4,10 @@ Tämä sovellus on toteutettu Solidabiksen kesän 2021 koodihaasteeseen. Haastee
 
 ## Tehtävänanto
 
-Haasteessa oli annettu valmiina kolmen eri autotyyppiä, joista käyttäjä voi valita yhden. Autojen bensankulutukset nopeudella 1 km/h olivat seuraavat:
-- auto A: 3 l / 100 km
-- auto B: 3,5 l / 100 km
-- auto C: 4 l / 100 km
+Haasteessa oli annettu valmiina kolme eri autotyyppiä, joista käyttäjä voi valita yhden. Autojen bensankulutukset nopeudella 1 km/h olivat seuraavat:
+- Auto A: 3 l / 100 km
+- Auto B: 3,5 l / 100 km
+- Auto C: 4 l / 100 km
 
 Auton bensankulutus kasvoi niin, että auton nopeuden kasvaessa 1 km/h bensankulutus kasvoi 1,009-kertaiseksi.
 
