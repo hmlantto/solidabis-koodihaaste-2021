@@ -1,8 +1,14 @@
+// InputForm renders the form that is used to collect information from the user.
+// The choice of fuel consumption is coded as radio buttons. Distance and
+// the two driving speeds are coded as input elements. The form has no
+// submit button. Instead, the other two components (Choices and Comparison)
+// are updated in real time as the user changes their input.
+
 import React from 'react'
-import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Car from './Car'
+import Form  from 'react-bootstrap/Form'
+import Row   from 'react-bootstrap/Row'
+import Col   from 'react-bootstrap/Col'
+import Car   from './Car'
 import './../style.css'
 
 const InputForm = (props) => {
@@ -20,28 +26,47 @@ const InputForm = (props) => {
           </Col>
         </Form.Group>
       </fieldset>
+
       <Form.Group as={Row} controlId="distance">
         <Form.Label>
           Etäisyys (km)
         </Form.Label>
         <Col>
-          <Form.Control as="input" type="number" placeholder="Syötä etäisyys" min="0" onChange={inputDistance} />
+          <Form.Control as="input"
+                        type="number"
+                        placeholder="Syötä etäisyys"
+                        min="0"
+                        onChange={inputDistance} />
         </Col>
       </Form.Group>
+
       <Form.Group as={Row} controlId="speed1">
         <Form.Label>
           Nopeus 1 (km/h)
         </Form.Label>
         <Col>
-          <Form.Control as="input" type="number" placeholder="Syötä verrattava ajonopeus" min="0" max="200" step="5" onChange={inputSpeed1} />
+          <Form.Control as="input"
+                        type="number"
+                        placeholder="Syötä verrattava ajonopeus"
+                        min="0"
+                        max="200"
+                        step="5"
+                        onChange={inputSpeed1} />
         </Col>
       </Form.Group>
+
       <Form.Group as={Row} controlId="speed2">
         <Form.Label>
           Nopeus 2 (km/h)
         </Form.Label>
         <Col>
-          <Form.Control as="input" type="number" placeholder="Syötä verrattava ajonopeus" min="0" max="200" step="5" onChange={inputSpeed2} />
+          <Form.Control as="input"
+                        type="number"
+                        placeholder="Syötä verrattava ajonopeus"
+                        min="0"
+                        max="200"
+                        step="5"
+                        onChange={inputSpeed2} />
         </Col>
       </Form.Group>
     </Form>

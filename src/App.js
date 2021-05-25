@@ -1,24 +1,30 @@
+// Main component for the "Autoilumittari" app. Makes use of three other
+// components: InputForm, Choices, and Comparison. InputForm renders
+// the form that is used to collect information from the user. Choices
+// displays the user's current input of fuel consumption and distance,
+// and Comparison performs the calculations and displays the results.
+
 import React, { useState } from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import InputForm from './components/InputForm'
-import Choices from './components/Choices'
-import Comparison from './components/Comparison'
+import Container   from 'react-bootstrap/Container'
+import Row         from 'react-bootstrap/Row'
+import Col         from 'react-bootstrap/Col'
+import InputForm   from './components/InputForm'
+import Choices     from './components/Choices'
+import Comparison  from './components/Comparison'
 import carsService from './services/cars'
 
 const App = () => {
-  const [ fuelConsumption, setFuelConsumption ] = useState( 0 )
-  const [ distance, setDistance ] = useState( 0 )
-  const [ speed1, setSpeed1 ] = useState( 0 )
-  const [ speed2, setSpeed2 ] = useState( 0 )
+  const [ fuelConsumption , setFuelConsumption ] = useState( 0 )
+  const [ distance        , setDistance        ] = useState( 0 )
+  const [ speed1          , setSpeed1          ] = useState( 0 )
+  const [ speed2          , setSpeed2          ] = useState( 0 )
 
   const cars = carsService.getAll()
 
   const chooseCar = ( event ) => {
     setFuelConsumption( parseInt( event.target.value ) )
   }
-  
+
   const inputDistance = ( event ) => {
     let value = parseInt( event.target.value )
     if ( value < 0 || !value ) {
@@ -32,6 +38,9 @@ const App = () => {
     if ( value < 0 || !value ) {
       value = 0
     }
+    if ( value > 200 ) {
+      value = 200
+    }
     setSpeed1( value )
   }
 
@@ -39,6 +48,9 @@ const App = () => {
     let value = parseInt( event.target.value )
     if ( value < 0 || !value ) {
       value = 0
+    }
+    if ( value > 200 ) {
+      value = 200
     }
     setSpeed2( value )
   }
@@ -54,7 +66,8 @@ const App = () => {
 
       <Row>
         <div className="instructions-div" >
-            <p>Autoilumittarilla voit tarkastella, miten ajonopeuden muutos vaikuttaa matkustusaikaan ja bensankulutukseen. Laskuri päivittyy reaaliajassa.</p>
+            <p>Autoilumittarilla voit tarkastella, miten ajonopeuden muutos vaikuttaa matkustusaikaan ja bensankulutukseen. 
+              Ajonopeuden yläraja on 200 km/h. Laskuri päivittyy reaaliajassa.</p>
         </div>
       </Row>
 

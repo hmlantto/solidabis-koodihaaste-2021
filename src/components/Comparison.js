@@ -1,3 +1,7 @@
+// Comparison performs the calculations of travel time and gas usage
+// based on the user's input and displays the results. The results
+// are updated in real time as the user changes their input.
+
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 
@@ -31,6 +35,7 @@ const Comparison = ( props ) => {
           <th>Bensa</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <td></td>
@@ -38,12 +43,14 @@ const Comparison = ( props ) => {
           <td>{time1Hours} h {time1Minutes} min</td>
           <td>{totalFuel1} litraa</td>
         </tr>
+
         <tr>
           <td></td>
           <td>{speed2} km/h</td>
           <td>{time2Hours} h {time2Minutes} min</td>
           <td>{totalFuel2} litraa</td>
         </tr>
+        
         <tr className="results-row">
           <th>Ero</th>
           <td></td>

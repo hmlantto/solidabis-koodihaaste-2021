@@ -1,22 +1,28 @@
-/* ----------------------------------------------- */
-/* MAIN LAYOUT                                     */
-/* ----------------------------------------------- */
+/* ---------------------------------------------- */
+/* TABLE OF CONTENTS                              */
+/* - main layout                                  */
+/* - header                                       */
+/* - input col                                    */
+/* - results column                               */
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/* MAIN LAYOUT                                    */
+/* ---------------------------------------------- */
 
 .main-div {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  max-width: 50rem;
+  max-width: 45rem;
 }
 
-/* .row {
-  --bs-gutter-x: 0 !important;
-} */
-
-/* ----------------------------------------------- */
-/* HEADER                                          */
-/* ----------------------------------------------- */
+/* ---------------------------------------------- */
+/* HEADER                                         */
+/* ---------------------------------------------- */
 
 .header-div {
   margin-bottom: 2rem;
@@ -26,18 +32,18 @@ h1 {
   text-align: center;
 }
 
-/* ----------------------------------------------- */
-/* INPUT COL                                       */
-/* ----------------------------------------------- */
+/* ---------------------------------------------- */
+/* INPUT COLUMN                                   */
+/* ---------------------------------------------- */
 
 @media (max-width: 767px) {
   .input-div {
     margin-bottom: 3rem;
   }
-}
 
-.input-div {
-  width: 100%;
+  .form-check, .form-control  {
+    max-width: 17rem;
+  }
 }
 
 .form-label {
@@ -49,9 +55,20 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-/* ----------------------------------------------- */
-/* RESULTS COL                                     */
-/* ----------------------------------------------- */
+.form-check {
+  border: solid;
+  border-width: thin;
+  border-radius: 0.25rem;
+  border-color: #ced4da;
+  padding-left: 2rem !important;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ---------------------------------------------- */
+/* RESULTS COLUMN                                 */
+/* ---------------------------------------------- */
 
 .results-col {
   padding-block-end: 0.5rem;
@@ -66,6 +83,13 @@ h1 {
   border-radius: .25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .results-div {
+    margin-left: auto;
+  margin-right: 0;
+  }
 }
 
 .choices-div {

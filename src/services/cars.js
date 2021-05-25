@@ -1,14 +1,14 @@
 const cars = [
   {
-    id: 1,
+    id: 'car1',
     fuel: 3
   },
   {
-    id: 2,
+    id: 'car2',
     fuel: 3.5
   },
   {
-    id: 3,
+    id: 'car3',
     fuel: 4
   }
 ] 
