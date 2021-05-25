@@ -40,10 +40,6 @@ h1 {
   .input-div {
     margin-bottom: 3rem;
   }
-
-  .form-check, .form-control  {
-    max-width: 17rem;
-  }
 }
 
 .form-label {
@@ -66,6 +62,10 @@ h1 {
   margin-bottom: 0.5rem !important;
 }
 
+.form-check-label {
+  width: 100%;
+}
+
 /* ---------------------------------------------- */
 /* RESULTS COLUMN                                 */
 /* ---------------------------------------------- */
@@ -83,12 +83,13 @@ h1 {
   border-radius: .25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .results-div {
-    margin-left: auto;
-  margin-right: 0;
+    margin-left: 2rem;
+    margin-right: 0;
   }
 }
 
